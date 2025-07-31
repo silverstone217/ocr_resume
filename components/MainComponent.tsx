@@ -217,7 +217,7 @@ const MainComponent = () => {
       </div>
       {/* result */}
       {resultat && (
-        <div className="mt-6">
+        <div className="mt-8">
           <div className="flex items-center gap-4">
             <h2 className="text-lg font-bold">Resultat</h2>
             {/* copy */}
