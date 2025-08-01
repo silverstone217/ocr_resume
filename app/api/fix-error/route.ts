@@ -18,7 +18,7 @@ export async function POST(request: Request) {
 
     const prompt = `
 Tu es un correcteur de texte professionnel.
-Corrige et améliore uniquement ce texte en français, en corrigeant toutes les fautes d'orthographe, de grammaire, de syntaxe et de logique.
+Corrige et améliore uniquement ce texte en français, en corrigeant toutes les fautes d'orthographe, de grammaire et de syntaxe.
 Retourne STRICTEMENT uniquement le texte corrigé et amélioré, SANS explications, SANS introduction, SANS résumé, SANS commentaires supplémentaires.
 Voici le texte à corriger :\n\n${truncatedText}
 `;

@@ -12,8 +12,8 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: "OCR resume - avec IA",
   description:
-    "Resuver vos fichiers, textes ou ameliorer la logique et corriger les fautes gramaticales ou de logique",
-  keywords: "ocr, resume, ia, text, fichier, logique, fautes,",
+    "Resuver vos fichiers, textes et corriger les fautes gramaticales",
+  keywords: "ocr, resume, ia, text, fichier,  fautes,",
 };
 
 export default function RootLayout({

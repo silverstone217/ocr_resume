@@ -1,37 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Projet Next.js avec correction et résumé de textes/fichiers
 
-## Getting Started
+## Description
 
-First, run the development server:
+Ce projet est une application web développée avec **Next.js** et **TypeScript**, déployée sur **Vercel**. Elle offre deux fonctionnalités principales liées au traitement de textes et fichiers Word (.docx) :
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Correction automatique** des erreurs dans un texte ou un fichier Microsoft Word (.docx) uploadé.
+- **Résumé** d’un texte ou d’un fichier Microsoft Word (.docx) uploadé.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+L’application exploite la bibliothèque **office-text-extractor** pour extraire le contenu des fichiers `.docx`, **parse-multipart-data** pour gérer les uploads, et utilise **Vercel AI Gateway avec Grok 3** pour le traitement intelligent des textes (correction et résumé).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies utilisées
 
-## Learn More
+- [Next.js](https://nextjs.org/) (React Framework)
+- [TypeScript](https://www.typescriptlang.org/) (typage statique)
+- [Vercel](https://vercel.com/) (plateforme de déploiement serverless)
+- [office-text-extractor](https://www.npmjs.com/package/office-text-extractor) (extraction de texte depuis fichiers Word)
+- [parse-multipart-data](https://www.npmjs.com/package/parse-multipart-data) (gestion des fichiers uploadés multipart)
+- [Vercel AI Gateway](https://vercel.com/docs/concepts/ai/gateway) avec Grok 3 (pour l’analyse et le traitement de texte avancé)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Fonctionnalités
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 1. Correction de texte/fichier
 
-## Deploy on Vercel
+- L’utilisateur peut soumettre un texte brut ou uploader un fichier `.docx`.
+- Le système extrait le texte si nécessaire, puis utilise l’IA Grok 3 pour détecter et corriger les erreurs linguistiques.
+- Le texte corrigé est ensuite affiché et peut être téléchargé.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2. Résumé de texte/fichier
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# ocr_resume
+- L’utilisateur peut soumettre un texte ou un fichier `.docx`.
+- Le contenu est extrait et un résumé concis est généré via l’IA Grok 3.
+- Le résumé est affiché dans l’interface utilisateur pour lecture rapide.
+
+---
+
+## Installation et déploiement
+
+1. Clonez le dépôt :
+   git clone https://github.com/silverstone217/ocr_resume
+   cd ocr_resume
+
+2. Installez les dépendances :
+   npm install ou yarn install
+
+3. Configurez vos variables d’environnement (ex. clés d’API pour Vercel AI Gateway) dans un fichier `.env.local`.
+
+4. Lancez le serveur de développement localement :
+   npm run dev ou yarn dev
+
+5. Pour déployer votre projet, poussez vos changements sur GitHub et importez le repository dans [Vercel](https://vercel.com/) pour un déploiement automatique.
+
+---
+
+## Usage
+
+L’interface utilisateur propose deux modes :
+
+- **Correction d’erreurs** : collez votre texte ou uploadez un fichier Word, puis cliquez sur "Corriger".
+- **Résumé** : collez un texte ou uploadez une source `.docx`, puis cliquez sur "Résumer".
+
+Les résultats s’affichent directement en dessous avec options de copie ou téléchargement.
+
+---
+
+## Structure du projet
+
+- `/pages` - Pages Next.js (Frontend + API)
+- `/lib` - Fonctions utilitaires pour extraction et traitement
+- `/components` - Composants React UI
+- `/api` - Points d’entrée API pour correction et résumé
+- `README.md` - Cette documentation
+
+---
+
+## Contributions
+
+Les contributions sont les bienvenues. Merci d’ouvrir une issue ou une pull request pour proposer des améliorations ou signaler des bugs.
+
+---
+
+## Licence
+
+Ce projet est sous licence MIT.
+
+---
+
+## Contact
+
+Pour toute question ou suggestion, merci de contacter [stephuni35@gmail.com].
+
+---
+
+Ce README synthétise l’essentiel pour comprendre et utiliser votre projet de traitement intelligent de texte/fichiers avec Next.js et Vercel.
+
+# Projet de traitement intelligent de texte/fichiers ORC_RESUME

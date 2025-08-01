@@ -5,8 +5,8 @@ export default function Home() {
     <div className="container max-w-4xl mx-auto py-10 px-4">
       <h2 className="text-4xl font-bold mb-2">OCR RESUME</h2>
       <p className="max-w-md text-gray-400">
-        Resumer des fichiers pdf en texte ou Ameliorer la logique de text et
-        corriger les fautes grammaticales ou de logiques.
+        Resumer des fichiers ms word(.docx) en texte ou Ameliorer la syntaxe de
+        text et corriger les fautes grammaticales et de syntaxes.
         <br />
         La limite est de 3000 caractères.
       </p>

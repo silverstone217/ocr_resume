@@ -18,6 +18,7 @@ const MainComponent = () => {
 
   const [loading, setLoading] = useState(false);
   const [loadingCor, setLoadingCor] = useState(false);
+  const [loadingFile, setLoadingFile] = useState(false);
 
   //   resume
   const handleMakeResume = async () => {
@@ -79,6 +80,7 @@ const MainComponent = () => {
   //   file to text
   useEffect(() => {
     if (file) {
+      setLoadingFile(true);
       const extractTextFromServer = async () => {
         const formData = new FormData();
         formData.append("file", file); // fichier Word sélectionné
@@ -102,6 +104,8 @@ const MainComponent = () => {
           console.error(error);
           toast.error("Une erreur est survenue, veuillez réessayer!");
           setText("");
+        } finally {
+          setLoadingFile(false);
         }
       };
 
@@ -122,7 +126,7 @@ const MainComponent = () => {
   };
 
   return (
-    <div className="p-4 border-2 w-full">
+    <div className="p-4 border-2 w-full rounded-md">
       <div className="grid w-full md:grid-cols-2 min-h-72 gap-4">
         {/* pdf */}
         <div className="col-span-1 ">
@@ -191,7 +195,7 @@ const MainComponent = () => {
             autoCapitalize="off"
             autoCorrect="off"
             placeholder="Entrer votre texte ici..."
-            disabled={loading || loadingCor}
+            disabled={loading || loadingCor || loadingFile}
           />
         </div>
       </div>
@@ -200,7 +204,7 @@ const MainComponent = () => {
         {/* fix logic and grammatical error syntax */}
         <Button
           className="flex-1"
-          disabled={loading || loadingCor}
+          disabled={loading || loadingCor || loadingFile}
           onClick={handleMakeCorrection}
         >
           {loadingCor ? <Loader className="animate-spin" /> : <FileText />}
@@ -208,7 +212,7 @@ const MainComponent = () => {
         </Button>
         <Button
           className="flex-1"
-          disabled={loading || loadingCor}
+          disabled={loading || loadingCor || loadingFile}
           onClick={handleMakeResume}
         >
           {loading ? <Loader className="animate-spin" /> : <File />}
@@ -227,7 +231,7 @@ const MainComponent = () => {
                   variant={"outline"}
                   size={"sm"}
                   onClick={handleCopy}
-                  disabled={loading || loadingCor}
+                  disabled={loading || loadingCor || loadingFile}
                 >
                   <Copy />
                 </Button>
@@ -243,7 +247,7 @@ const MainComponent = () => {
                   variant={"destructive"}
                   size={"sm"}
                   onClick={handleClear}
-                  disabled={loading || loadingCor}
+                  disabled={loading || loadingCor || loadingFile}
                 >
                   <X />
                 </Button>
