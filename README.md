@@ -69,11 +69,12 @@ Les résultats s’affichent directement en dessous avec options de copie ou té
 
 ## Structure du projet
 
-- `/pages` - Pages Next.js (Frontend + API)
+- `/app` - Pages Next.js (Frontend + API) et Icon
 - `/lib` - Fonctions utilitaires pour extraction et traitement
 - `/components` - Composants React UI
-- `/api` - Points d’entrée API pour correction et résumé
+- `app/api` - Points d’entrée API pour correction et résumé
 - `README.md` - Cette documentation
+- `public` - Assets statiques (images, etc.)
 
 ---
 
@@ -91,7 +92,7 @@ Ce projet est sous licence MIT.
 
 ## Contact
 
-Pour toute question ou suggestion, merci de contacter [stephuni35@gmail.com].
+Pour toute question ou suggestion, merci de contacter stephuni35@gmail.com.
 
 ---
 
